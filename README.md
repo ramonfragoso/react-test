@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# 2nd Call - Frontend Interview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Part 1
+Provided a Pokemon javascript object structured as such:
 
-## Available Scripts
+```
+const bulbasaur = { id: 1, 
+                    name: "Bulbasaur", 
+                    types: ["grass"], 
+                    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" }
+```
 
-In the project directory, you can run:
+Create a reusable <PokemonRow /> component that takes in bulbasaur as a property and renders a row with the name, id, type and sprite image.
 
-### `npm start`
+## Part 2
+Provided a Pokemon javascript array structured as such:
+```
+const pokemons = [
+  { 
+    id: 1, 
+    name: "Bulbasaur", 
+    types: ["grass"], 
+    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+  },{ 
+    id: 1, 
+    name: "Pikachu", 
+    types: ["lightning"], 
+    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+  },{ 
+    id: 1, 
+    name: "Squirtle", 
+    types: ["water"], 
+    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
+  },
+  { 
+    id: 1, 
+    name: "Pidgeotto", 
+    types: ["air"], 
+    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/017.png"
+  }
+]
+```
+Create a <PokedexTable /> component that takes in the array and renders all the pokemon in that array.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Part 3
+Provided a <PokemonTypeSelection /> component with the following props
+```
+type PokemonTypeSelectionProps = {
+	selectedType: string | undefined; 
+	selectType: (type: string | undefined) => void; 
+}
+```
+This component should display the types for the user to select:
+```const types = ["grass", "water", "lightning", "air"]```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then,
+Create a <FilterablePokedexTable /> component that renders both the <PokemonTypeSelection /> component and <PokedexTable /> component. Make sure you only display Pokemon with the selected type!
